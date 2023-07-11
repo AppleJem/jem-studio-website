@@ -4,11 +4,21 @@ import type { AppProps } from "next/app";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import "./global.css";
+import { ChakraBaseProvider, extendBaseTheme } from '@chakra-ui/react'
+
+import chakraTheme from '@chakra-ui/theme'
+const { Button } = chakraTheme.components
 
 const emotionCache = createCache({
   key: "emotion-cache",
   prepend: true,
 });
+
+const theme = extendBaseTheme({
+  components: {
+    Button,
+  },
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,9 +31,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
-      <CacheProvider value={emotionCache}>
+      <ChakraBaseProvider theme={theme}>
+        <CacheProvider value={emotionCache}>
           <Component {...pageProps} />
-      </CacheProvider>
+        </CacheProvider>
+      </ChakraBaseProvider>
     </React.Fragment>
   );
 }
