@@ -7,11 +7,13 @@ import BioContainer from "../components/bio-container";
 import TeachingMethodologyContainer from "../components/teaching-methodology-container";
 import QuestionsContainer from "../components/questions-container";
 import Footer from "../components/footer";
+import Carousel from "./Carousel";
 
 const MacBookAir2: NextPage = () => {
   return (
     <main className="relative bg-white w-full overflow-hidden flex flex-col items-center justify-start gap-[163px] text-left text-white font-kaisei-decol">
       <NavbarResponsive />
+      <Carousel/>
       <div className="self-stretch flex flex-col items-center justify-start">
         <div className="self-stretch flex flex-col py-[326px] px-[142px] items-center justify-center bg-[url(/carousel-1@3x.png)] bg-cover bg-no-repeat bg-[top]">
           <div className="w-[705px] h-[155px] flex flex-col items-center justify-between">

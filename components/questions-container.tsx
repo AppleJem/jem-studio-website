@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import { Button } from "@chakra-ui/react";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const QuestionsContainer: NextPage = () => {
   return (
@@ -42,14 +40,7 @@ const QuestionsContainer: NextPage = () => {
           </div>
         </div>
         <div className="rounded-70xl bg-khaki box-border w-[207px] flex flex-col py-2 px-10 items-center justify-center cursor-pointer border-[1px] border-solid border-gray-100 hover:animate-[0.1s_ease_0s_1_reverse_forwards_shadow-pop-tr] hover:opacity-[1] lg:hover:cursor-pointer">
-          <Button
-            className="self-stretch relative"
-            variant="solid"
-            colorScheme="jemyellow"
-            rightIcon={<ArrowForwardIcon />}
-          >
-            Contact Us
-          </Button>
+
         </div>
       </form>
     </div>
