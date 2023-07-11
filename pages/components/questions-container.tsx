@@ -1,8 +1,43 @@
 import type { NextPage } from "next";
+import {useRef} from 'react';
+
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Box,
+  Button
+} from '@chakra-ui/react'
 
 const QuestionsContainer: NextPage = () => {
+
+  const nameInputRef = useRef(null)
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log(e.target)
+    console.log(nameInputRef!.current.value)
+  }
+
   return (
-    <div className="self-stretch flex flex-col items-center justify-center">
+    <div className="self-stretch flex flex-col items-center justify-center text-black">
+      <Box maxW="md" mx="auto" mt={8} p={4}>
+        <form onSubmit={handleSubmit}>
+          <FormControl id="name" mb={4}>
+            <FormLabel>Name</FormLabel>
+            <Input ref={nameInputRef} type="text" name="name" />
+          </FormControl>
+
+          <FormControl id="email" mb={4}>
+            <FormLabel>Email</FormLabel>
+            <Input type="email" name="email" />
+          </FormControl>
+
+          {/* Add more form fields as needed */}
+
+          <Button type="submit" colorScheme="blue">Submit</Button>
+        </form>
+      </Box>
       <form
         className="w-[544px] flex flex-col items-center justify-center gap-[45px]"
         method="post"
