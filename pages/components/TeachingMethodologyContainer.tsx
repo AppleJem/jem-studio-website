@@ -1,38 +1,34 @@
 import type { NextPage } from "next";
 
+import BooksCarousel from "./BooksCarousel";
 
 
 import { Playfair_Display } from "next/font/google"
 
 const playfair = Playfair_Display({
-    subsets: ["latin"],
-    fallback: ["serif"]
+  subsets: ["latin"],
+  fallback: ["serif"]
 })
 
 
 const TeachingMethodologyContainer: NextPage = () => {
   return (
-    <div className="self-stretch flex flex-col py-0 px-20 items-center justify-start gap-[48px] text-center text-45xl text-black font-inter">
-      <div className={`relative font-semibold text-5xl self-end ${playfair.className}`}>
-        Teaching methodology
-      </div>
-      <div className="self-stretch flex flex-row-reverse flex-wrap items-end justify-between text-left text-lg">
-      <div className="w-[630px] flex flex-col items-center justify-start gap-[15px] text-center text-xl font-times-new-roman">
-          <div className="self-stretch bg-stone-400 h-[496px] flex flex-col py-[21px] px-[22px] box-border items-center justify-between">
-            <img
-              className="self-stretch flex-1 relative max-w-full overflow-hidden max-h-full object-cover"
-              alt=""
-              src="/basicpaall2-1@2x.png"
-            />
-          </div>
-          <i className="relative inline-block w-[442px]">
-            Faber Piano Adventures Faber Adult/ABRSM/Trinity/Custom music
-            arrangements
-          </i>
-        </div>
-        <div className="relative flex items-end w-[373px] shrink-0">
+    <section id="method-container" className="w-full flex flex-col items-center text-black">
 
-          <span className=" w-full">
+      <div className="w-5/6 md:w-3/4 lg:w-3/5 flex flex-col items-center justify-center text-black gap-y-10">
+        <p className={`${playfair.className} self-stretch lg:text-right relative font-semibold text-3xl md:text-5xl`}>Teaching methodology</p>
+
+        <div className="w-full flex flex-col lg:flex-row-reverse lg:justify-between lg:gap-x-16 gap-y-10">
+          <div className="flex flex-col items-center gap-y-3 lg:w-3/5">
+
+            <BooksCarousel/>
+            <i className="relative inline-block">
+              Faber Piano Adventures Faber Adult/ABRSM/Trinity/Custom music
+              arrangements
+            </i>
+          </div>
+
+          <div className="relative lg:w-2/5 lg:mt-96 ">
             <p className="m-0">
               After undergoing pedagogical training at Aureus Academy Singapore
               as a teacher, I’ve decided to use the Faber Piano series of
@@ -55,11 +51,13 @@ const TeachingMethodologyContainer: NextPage = () => {
             </p>
             <p className="m-0">&nbsp;</p>
             <p className="m-0">Ultimately, I believe the goal of teaching is to inspire passion in my students. Interest-based learning is essential to the process, be it through fun pieces, good challenges and progression, or engaging activities.</p>
-          </span>
+
+          </div>
         </div>
 
       </div>
-    </div>
+    </section>
+
   );
 };
 

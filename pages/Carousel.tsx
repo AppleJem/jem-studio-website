@@ -23,6 +23,12 @@ function Carousel() {
             })}
 
         </div>
+        <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            {carouselImages.map((image, index) => {
+                return <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label={`Slide ${index +1}`} data-carousel-slide-to={index}></button>
+            })}
+            
+        </div>
         <div className={`${playfair.className} absolute top-0 w-full h-full text-white z-30 flex justify-center items-center`}>
             <div className="">
                 <p className="text-6xl">Learn Music</p>

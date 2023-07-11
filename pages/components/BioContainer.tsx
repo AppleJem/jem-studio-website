@@ -26,14 +26,14 @@ const BioContainer = () => {
 
   return (
     <div id="bio-container" className="w-full flex flex-col items-center">
-      <div className="w-full md:w-3/4 lg:w-3/5 flex flex-col items-center justify-center text-black gap-10">
+      <div className="w-5/6 md:w-3/4 lg:w-3/5 flex flex-col items-center justify-center text-black gap-10">
         <p className={`${playfair.className} self-stretch relative font-semibold text-3xl md:text-5xl text-left`}>Teacher Jem Zhang</p>
         <img
           className="self-stretch relative max-w-full overflow-hidden shrink-0 object-cover"
           alt=""
           src="/steinway-comp-2018--2-1@2x.png"
         />
-        <div className="w-[629px] flex flex-col items-start justify-start gap-12 text-lg self-end">
+        <div className="w-5/6 md:w-[30rem] md:self-end md:text-lg flex flex-col items-start justify-start gap-12 ">
           <div className="self-stretch relative">
             <p className="m-0">
               Jem is a passionate musician with years of experience
