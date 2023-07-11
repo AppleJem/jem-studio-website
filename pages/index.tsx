@@ -18,7 +18,7 @@ const MacBookAir2: NextPage = () => {
         <div className="self-stretch flex flex-col py-[326px] px-[142px] items-center justify-center bg-[url(/carousel-1@3x.png)] bg-cover bg-no-repeat bg-[top]">
           <div className="w-[705px] h-[155px] flex flex-col items-center justify-between">
             <b className="self-stretch relative leading-[99.8%]">Learn Music</b>
-            <div className="self-stretch relative text-[40px] text-right">
+            <div className="self-stretch relative text-[40px] text-right text-black">
               Your Way
             </div>
           </div>
