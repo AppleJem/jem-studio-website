@@ -34,9 +34,9 @@ const BioContainer = () => {
           alt=""
           src="/steinway-comp-2018--2-1@2x.png"
         /> */}
-        <BioCarousel/>
-        <div className="w-5/6 md:w-[30rem] md:self-end md:text-lg flex flex-col items-start justify-start gap-12 ">
-          <div className="self-stretch relative">
+        <BioCarousel />
+        <div className="w-5/6 md:w-[30rem] lg:w-full md:self-end md:text-lg flex flex-col lg:flex-row-reverse lg:justify-center items-start justify-start gap-12 ">
+          <div className="self-stretch relative lg:w-2/3">
             <p className="m-0">
               Jem is a passionate musician with years of experience
               performing and competing extensively both locally and
@@ -70,16 +70,14 @@ const BioContainer = () => {
             </p>
           </div>
           <div className="self-stretch flex flex-col items-start justify-start gap-[15px] text-17xl">
-            <div className="relative font-semibold">Career Highlights</div>
-            <div className="self-stretch relative text-[inherit] font-inherit">
-              <ul className="m-0 pl-6">
-                {achievements.map((achievement) => {
-                  return <li key={achievement} className="mb-[5px]">
-                    {achievement}
-                  </li>
-                })}
-              </ul>
-            </div>
+            <p className={`relative font-semibold ${playfair.className} text-lg lg:text-3xl lg:text-stone-400`}>Career Highlights</p>
+            <ul className="m-0 pl-6 list-disc">
+              {achievements.map((achievement) => {
+                return <li key={achievement} className="mb-[5px]">
+                  {achievement}
+                </li>
+              })}
+            </ul>
           </div>
         </div>
       </div>
