@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import "./global.css";
+import Script from "next/script";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
           <Component {...pageProps} />
+          <script src="/scripts/flowbite.min.js" async></script>
     </React.Fragment>
   );
 }
