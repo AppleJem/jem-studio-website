@@ -69,9 +69,9 @@ const BioContainer = () => {
               years old to adults.
             </p>
           </div>
-          <div className="self-stretch flex flex-col items-start justify-start gap-[15px] text-17xl">
+          <div className={`self-stretch flex flex-col items-start justify-start gap-[15px] text-17xl ${playfair.className}`}>
             <p className={`relative font-semibold ${playfair.className} text-lg lg:text-3xl lg:text-stone-400`}>Career Highlights</p>
-            <ul className="m-0 pl-6 list-disc">
+            <ul className="m-0 pl-6 list-disc lg:text-stone-500">
               {achievements.map((achievement) => {
                 return <li key={achievement} className="mb-[5px]">
                   {achievement}
