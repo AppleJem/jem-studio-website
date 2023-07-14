@@ -9,8 +9,7 @@ const sacra = Sacramento({
 
 const navLinks = [
   { text: "Home", link: "/" },
-  { text: "Charges", link: "/charges" },
-  { text: "Contact", link: "/contact" }
+  { text: "Charges", link: "/charges" }
 ]
 
 function NavbarResponsive() {
@@ -34,10 +33,12 @@ function NavbarResponsive() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
   const router = useRouter();
   console.log(router.pathname)
 
-  return <nav className={`${navbarTransparent ? "bg-transparent text-stone-200" : "bg-yellow-200 text-stone-800"} transition-colors duration-300 border-gray-200 w-full fixed top-0 z-50`}>
+  return <nav className={`${navbarTransparent ? "bg-transparent text-stone-200" : "backdrop-blur-2xl backdrop-contrast-50 bg-amber-200 bg-opacity-50 text-stone-50"} transition-colors duration-300 border-gray-200 w-full fixed top-0 z-50`}>
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <div className="flex flex-row justify-center items-center">
         <img src="/Logo_white border_no bg_no text.png" className="h-8 mr-3" alt="Flowbite Logo" />
@@ -51,13 +52,15 @@ function NavbarResponsive() {
         </svg>
       </button>
       <div className={`hidden  w-full md:block md:w-auto`} id="navbar-default">
-        <ul className="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:border-gray-700">
+        <ul className="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:items-center md:space-x-8 md:mt-0 md:border-0  dark:border-gray-700">
           {navLinks.map((link) => (
-            <li>
-              <a href={link.link} className={`${navbarTransparent? "md:hover:text-yellow-300": "md:hover:border-b hover:border-stone-600"} transition-colors ease-out duration-300 border-b border-transparent block py-2 pl-3 pr-4 hover:bg-gray-100 md:hover:bg-transparent md:p-0`}>{link.text}</a>
+            <li className="flex justify-center align-center">
+              <a href={link.link} className={`${link.link === router.pathname ? "border-b-stone-50" : ""} ${navbarTransparent ? "md:hover:text-yellow-300" : "md:hover:border-b hover:border-stone-600"} transition-colors ease-out duration-300 border-b border-transparent block py-2 hover:bg-gray-100 md:hover:bg-transparent md:p-0`}>{link.text}</a>
             </li>
           ))}
-
+          <li className={`py-2 flex justify-center align-center ${navbarTransparent ? "md:bg-yellow-200 border-transparent" : " md:text-stone-700 md:bg-yellow-200 md:border-stone-500 "} md:border-2 md:text-stone-700 md:font-semibold md:px-6 md:rounded-full`}>
+            <a href="/contact" className={`transition-colors ease-out duration-300 block hover:bg-gray-100 md:hover:bg-transparent md:p-0`}>Contact Us</a>
+          </li>
         </ul>
       </div>
     </div>
