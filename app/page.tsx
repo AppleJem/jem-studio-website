@@ -1,15 +1,18 @@
+"use client"
 import type { NextPage } from "next";
 import { useRef } from "react";
 import Image from "next/image";
 
 import NavbarResponsive from "../components/NavbarResponsive";
-import BioContainer from "./components/BioContainer";
-import TeachingMethodologyContainer from "./components/TeachingMethodologyContainer";
-import QuestionsContainer from "./components/questions-container";
+import BioContainer from "./BioContainer";
+import TeachingMethodologyContainer from "./TeachingMethodologyContainer";
+import QuestionsContainer from "./questions-container";
 import Footer from "../components/footer";
 import heroImage from '../public/images/Hau Tzen freeze frame.png'
 
 import { Playfair_Display } from "next/font/google";
+
+
 
 const playfair = Playfair_Display({
   subsets: ["latin"],

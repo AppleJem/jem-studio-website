@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useRef } from 'react';
 
 
-import { sendEmailFormAsync } from "../../utils/utils";
+import { sendEmailFormAsync } from "../utils/utils";
 
 const QuestionsContainer: NextPage = () => {
 

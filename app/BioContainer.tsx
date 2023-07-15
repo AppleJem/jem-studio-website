@@ -1,7 +1,7 @@
 
 
 import { Playfair_Display } from "next/font/google"
-import BioCarousel from "../BioCarousel";
+import BioCarousel from "./BioCarousel";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
