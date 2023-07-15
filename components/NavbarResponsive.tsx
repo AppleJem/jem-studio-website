@@ -17,7 +17,7 @@ function NavbarResponsive() {
 
   const [mobileMenuShowing, setMobileMenuShowing] = useState(false);
   const [navbarTransparent, setNavbarTransparent] = useState(true);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY; // => scroll position
@@ -41,7 +41,7 @@ function NavbarResponsive() {
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <div className="flex flex-row justify-center items-center">
         <img src="/Logo_white border_no bg_no text.png" className="h-8 mr-3" alt="Flowbite Logo" />
-        <span className={`self-center text-3xl whitespace-nowrap ${sacra.className}`}>Da Capo Studio</span>
+        <span className={`self-center text-3xl whitespace-nowrap ${sacra.className}`}>Rondo Studio</span>
       </div>
 
       <button onClick={(e) => setMobileMenuShowing(!mobileMenuShowing)} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-default" aria-expanded="false">

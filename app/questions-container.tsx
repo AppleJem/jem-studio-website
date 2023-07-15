@@ -39,7 +39,7 @@ const QuestionsContainer: NextPage = () => {
       apiLink = apiLink.concat(encodeURIComponent(msgInputRef.current?.value));
       console.log(apiLink);
     } else {
-      let text = "Hi, I would like to enquire more about piano lessons at Da Capo studio.";
+      let text = "Hi, I would like to enquire more about piano lessons at Rondo Studio.";
       apiLink = apiLink.concat(encodeURIComponent(text));
     }
     window.open(apiLink, "_newtab");
