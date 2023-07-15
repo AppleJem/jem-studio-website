@@ -32,8 +32,8 @@ const MacBookAir2: NextPage = () => {
           <Image alt="banner image" className="object-cover w-full h-screen" src={heroImage} />
           <div className={`${playfair.className} absolute top-0 w-full h-full text-white z-30 flex justify-center items-center`}>
             <div>
-              <p className="text-[6rem]">Learn Music</p>
-              <p className="text-6xl text-right -mr-10">Your Way</p>
+              <p className="text-6xl md:text-[6rem]">Learn Music</p>
+              <p className="text-3xl text-right md:-mr-10">Your Way</p>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ const Footer: NextPage = () => {
       </div>
 
       <div className="text-sm md:text-base flex flex-row gap-x-4 items-center">
-        <button onClick={() => window.scrollTo(0, 0)} className="relative">Return to Top</button>
+        <button onClick={() => window.scrollTo(0, 0)} className="relative">Back to Top</button>
         <div className="relative">Contact Us</div>
       </div>
     </div>
