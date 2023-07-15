@@ -8,7 +8,7 @@ import BioContainer from "./BioContainer";
 import TeachingMethodologyContainer from "./TeachingMethodologyContainer";
 import QuestionsContainer from "./questions-container";
 import Footer from "../components/footer";
-import heroImage from '../public/images/HauTzen.webp'
+import heroImage from '../public/images/piano kid stock.webp'
 
 import { Playfair_Display } from "next/font/google";
 
@@ -29,7 +29,7 @@ const MacBookAir2: NextPage = () => {
       <NavbarResponsive />
       <main onScroll={(e) => console.log('scrolling')} className="relative flex flex-col gap-12 md:gap-32 bg-white w-full overflow-hidden  text-left text-white font-kaisei-decol">
         <div className="relative w-full">
-          <Image alt="banner image" className="object-cover w-full h-screen brightness-[0.6] contrast-75 " src={heroImage} />
+          <Image alt="banner image" className="object-cover w-full h-screen" src={heroImage} />
           <div className={`${playfair.className} absolute top-0 w-full h-full text-white z-30 flex justify-center items-center`}>
             <div>
               <p className="text-[6rem]">Learn Music</p>
