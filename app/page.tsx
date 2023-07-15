@@ -27,7 +27,7 @@ const MacBookAir2: NextPage = () => {
   return (
     <>
       <NavbarResponsive />
-      <main onScroll={(e) => console.log('scrolling')} className="relative flex flex-col gap-12 md:gap-32 bg-white w-full overflow-hidden  text-left text-white font-kaisei-decol">
+      <main onScroll={(e) => console.log('scrolling')} className="relative flex flex-col gap-16 md:gap-32 bg-white w-full overflow-hidden  text-left text-white font-kaisei-decol pb-12">
         <div className="relative w-full">
           <Image alt="banner image" className="object-cover w-full h-screen" src={heroImage} />
           <div className={`${playfair.className} absolute top-0 w-full h-full text-white z-30 flex justify-center items-center`}>

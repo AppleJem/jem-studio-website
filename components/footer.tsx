@@ -1,4 +1,6 @@
-import type { NextPage } from "next";
+"use client"
+
+import Link from "next/link";
 
 const socials = [
   { src: "/footerIcons/facebookIcon.svg", link: "#" },
@@ -7,7 +9,11 @@ const socials = [
   { src: "/footerIcons/xhsIcon.svg", link: "#" }
 ]
 
-const Footer: NextPage = () => {
+function Footer (){
+  console.log('hi')
+  function scrollToTop () {
+    window.scrollTo(0,0)
+  }
   return (
     <div className="self-stretch bg-zinc-700 flex flex-row py-3  px-6 md:py-5 md:px-9 lg:px-20 box-border items-center justify-between text-left text-xl text-white font-inter">
       <div className="flex flex-row gap-x-2 items-start justify-between">
@@ -23,8 +29,11 @@ const Footer: NextPage = () => {
       </div>
 
       <div className="text-sm md:text-base flex flex-row gap-x-4 items-center">
-        <button onClick={() => window.scrollTo(0, 0)} className="relative">Back to Top</button>
-        <div className="relative">Contact Us</div>
+        <button onClick={() => {
+          scrollToTop()
+          console.log('clicked')
+        }} className="relative">Back to Top</button>
+        <Link href="/contact" className="relative">Contact Us</Link>
       </div>
     </div>
   );

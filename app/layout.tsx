@@ -12,9 +12,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <body className={inter.className}>
-      {children}
-      <script src="/scripts/flowbite.min.js" async></script>
-    </body>
+    <html lang='en'>
+      <body className={inter.className}>
+        {children}
+        <script src="/scripts/flowbite.min.js" async></script>
+      </body>
+    </html>
+
   )
 }
