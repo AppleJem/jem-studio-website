@@ -8,7 +8,7 @@ import BioContainer from "./BioContainer";
 import TeachingMethodologyContainer from "./TeachingMethodologyContainer";
 import QuestionsContainer from "./questions-container";
 import Footer from "../components/footer";
-import heroImage from '../public/images/Hau Tzen freeze frame.png'
+import heroImage from '../public/images/HauTzen.webp'
 
 import { Playfair_Display } from "next/font/google";
 

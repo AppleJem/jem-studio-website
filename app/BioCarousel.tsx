@@ -6,12 +6,12 @@ const playfair = Playfair_Display({
     fallback: ["serif"]
 })
 const carouselImages = [
-    "/images/home_carousel/carousel-1.png",
-    "/images/home_carousel/SIPC 2019 - 2.JPG",
-    "/images/home_carousel/Steinway Comp 2018 - 1.jpg",
-    "/images/home_carousel/ytp 2017 - 3.jpg",
-    "/images/home_carousel/ytp 2017 -1.jpg",
-    "/images/home_carousel/Steinway Comp 2018 - 2.jpg"
+    "/images/home_carousel/studio image.webp",
+    "/images/home_carousel/SIPC 2019 - 2.webp",
+    "/images/home_carousel/Steinway Comp 2018 - 1.webp",
+    "/images/home_carousel/ytp 2017 - 3.webp",
+    "/images/home_carousel/ytp 2017 -1.webp",
+    "/images/home_carousel/Steinway Comp 2018 - 2.webp"
 ]
 
 function BioCarousel() {
