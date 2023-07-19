@@ -19,14 +19,14 @@ const playfair = Playfair_Display({
   fallback: ["serif"]
 })
 
-const MacBookAir2: NextPage = () => {
+const LandingPage: NextPage = () => {
   const mainContainerRef = useRef<HTMLDivElement>(null)
 
 
 
   return (
     <>
-      <NavbarResponsive />
+      <NavbarResponsive fixedColor={false}/>
       <main onScroll={(e) => console.log('scrolling')} className="relative flex flex-col gap-16 md:gap-32 bg-white w-full overflow-hidden  text-left text-white font-kaisei-decol pb-12">
         <div className="relative w-full">
           <Image alt="banner image" className="object-cover w-full h-screen" src={heroImage} />
@@ -58,4 +58,4 @@ const MacBookAir2: NextPage = () => {
   );
 };
 
-export default MacBookAir2;
+export default LandingPage;
