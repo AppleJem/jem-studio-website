@@ -15,6 +15,7 @@ function Charges() {
                 <span className="w-16 border-t-2 border-t-stone-500 h-1 mt-8 mb-2"></span>
                 <div className="flex flex-row text-black text-sm gap-x-10 lg:gap-x-20 lg:text-lg ">
                     <p>
+                        Trial lesson <br />
                         Grade 3 and below <br />
                         Grade 4-5 <br />
                         Grade 6-7 <br />
@@ -22,6 +23,7 @@ function Charges() {
                         DipABRSM/ATCL <br />
                     </p>
                     <p className="text-right">
+                        Free/30mins <br />
                         $45/45mins or $60/hr <br />
                         $70/hr <br />
                         $80/hr <br />
