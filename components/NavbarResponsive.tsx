@@ -13,7 +13,7 @@ const navLinks = [
   { text: "Charges", link: "/charges" }
 ]
 
-function NavbarResponsive(props: {fixedColor:boolean}) {
+function NavbarResponsive(props: {fixedColor:boolean, bgColor ?:string}) {
 
   const [mobileMenuShowing, setMobileMenuShowing] = useState(false);
   const [navbarTransparent, setNavbarTransparent] = useState(true);
