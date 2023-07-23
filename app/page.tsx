@@ -1,7 +1,8 @@
 "use client"
 import type { NextPage } from "next";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import NavbarResponsive from "../components/NavbarResponsive";
 import BioContainer from "./BioContainer";
@@ -21,8 +22,11 @@ const playfair = Playfair_Display({
 
 const LandingPage: NextPage = () => {
   const mainContainerRef = useRef<HTMLDivElement>(null)
-
-
+  const router = useRouter();
+  useEffect(() => {
+    "use strict";
+    console.log("route change detected")
+  }, [router]);
 
   return (
     <>
@@ -49,7 +53,7 @@ const LandingPage: NextPage = () => {
           src="/subtract1.svg"
         />
         <TeachingMethodologyContainer />
-        <QuestionsContainer/>
+        <QuestionsContainer />
 
       </main>
 
