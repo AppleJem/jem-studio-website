@@ -19,32 +19,32 @@ function Footer() {
     window.scrollTo(0, 0)
   }
   return (
-    <footer className="self-stretch bg-zinc-700 flex flex-col items-center md:py-5 md:px-9 lg:px-20 box-border text-left text-xl text-white font-inter">
-      <div className="text-sm md:text-base flex flex-col items-center text-stone-200 w-full">
+    <footer className="self-stretch bg-zinc-700 flex flex-col lg:flex-row items-center lg:px-20 box-border text-left text-xl text-white font-inter">
+      <div className="text-sm md:text-base flex flex-col lg:flex-row lg:gap-x-8 items-center text-stone-200 w-full">
         {links.map((link) => {
           return <>
-            <Link className="h-12 flex justify-center items-center" href={link.href}>{link.text}</Link>
-            <hr className="border-t border-t-stone-500 h-1 w-full" />
+            <Link className="h-12 md:h-16 flex justify-center items-center" href={link.href}>{link.text}</Link>
+            <hr className="border-t border-t-stone-500 h-1 w-full lg:hidden" />
           </>
         })}
         <button onClick={() => {
           scrollToTop()
           console.log('clicked')
         }} className="h-12 flex justify-center items-center">Back to Top</button>
-        <hr className="border-t border-t-stone-500 h-1 w-full" />
+        <hr className="border-t border-t-stone-500 h-1 w-full lg:hidden" />
       </div>
       <div className="my-6 flex flex-row gap-x-6 items-start justify-between">
         {socials.map((social) => (
           <Link href={social.link} key={social.src}>
             <img
-              className="relative aspect-square h-10 md:h-12 overflow-hidden shrink-0"
+              className="relative aspect-square h-12 md:h-12 overflow-hidden shrink-0"
               alt=""
               src={social.src}
             />
           </Link>
         ))}
       </div>
-      <span className="text-xs text-stone-400 mb-8">&copy;2023 Rondo Studio</span>
+      <span className="text-xs text-stone-400 mb-8 lg:mb-0 lg:ml-8 lg:w-44">&copy;2023 Rondo Studio</span>
     </footer>
   );
 };
