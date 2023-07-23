@@ -84,13 +84,13 @@ const QuestionsContainer: NextPage = () => {
         </div>
         <div className="flex flex-row justify-center items-center gap-4 mt-6">
           <button disabled={formState === "loading" || formState === "sent"} type="submit"
-            className={`text-gray-900 bg-gradient-to-r from-yellow-200 to-amber-200 
-            hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200
-            rounded-full text-lg px-7 h-12 text-center self-center`}>
+            className={` ${formState==="sent" ? "bg-stone-300 text-stone-400":"bg-yellow-200 text-gray-900" }
+            ${formState==="unsent" && "hover:bg-lime-200"} focus:ring-4 focus:outline-none focus:ring-lime-100
+            rounded-full text-lg px-7 h-12 text-center self-center transition-colors duration-200`}>
             <span className={`${formState === "loading" ? "hidden" : ""}`}>
               {formState==="sent"?"Thank You!": "Contact Us"}
             </span>
-            <Image src={loadingSpinner} alt="loading spinner" className={`${formState === "loading" ? "" : "hidden"} h-10 w-10 aspect-square animate-spin fill-white text-white stroke-white`} />
+            <Image src={loadingSpinner} alt="loading spinner" className={`${formState === "loading" ? "" : "hidden"} h-8 w-8 aspect-square animate-spin fill-white text-white stroke-white`} />
           </button>
           <button type="button" onClick={whatsappHandler} className="h-12 aspect-square rounded-full bg-lime-300 flex justify-center items-center">
             <Image src={waIcon} alt="send whatsapp message" className="h-4/6" />
