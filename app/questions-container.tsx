@@ -34,8 +34,8 @@ const QuestionsContainer: NextPage = () => {
     for (let item of formData.entries()) {
       console.log(item)
     }
-    const res = await sendEmailTestAsync(formData);
-    if (res.ok) {
+    const res = await sendEmailFormAsync(formData);
+    if (res && res.ok) {
       console.log(res)
       setFormState("sent")
     }
@@ -59,8 +59,8 @@ const QuestionsContainer: NextPage = () => {
   const formLabelStyle = "text-sm"
 
   return (
-    <div className="self-stretch flex flex-col items-center justify-center text-stone-600">
-      <p className={`text-2xl mb-6 ${playfair.className}`}>Want to know more?</p>
+    <div  className="self-stretch flex flex-col items-center justify-center text-stone-600">
+      <p id="contact-form" className={`text-2xl mb-6 ${playfair.className}`}>Want to know more?</p>
       <form className="w-3/4 max-w-2xl lg:w-2/5 flex flex-col items-stretch text-stone-600" onSubmit={handleSubmit}>
         <div className="mb-6">
           <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
@@ -79,7 +79,7 @@ const QuestionsContainer: NextPage = () => {
 
         <div className="mb-6">
           <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-          <textarea ref={msgInputRef} id="message" name="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-yellow-400 transition-colors duration-300 ease-out focus:border-yellow-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          <textarea required ref={msgInputRef} id="message" name="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-yellow-400 transition-colors duration-300 ease-out focus:border-yellow-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Write your message here..."></textarea>
         </div>
         <div className="flex flex-row justify-center items-center gap-4 mt-6">

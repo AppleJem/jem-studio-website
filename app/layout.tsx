@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,13 +12,17 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+
   return (
+
     <html lang='en'>
       <body className={inter.className}>
         {children}
-        <script src="/scripts/flowbite.min.js" async></script>
+        <Script src="/scripts/flowbite.min.js" strategy='beforeInteractive'></Script>
       </body>
     </html>
 
   )
 }
+
