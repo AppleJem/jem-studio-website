@@ -5,12 +5,21 @@ export const sendEmailFormAsync = async (formData: FormData) => {
             body: formData
         });
         console.log(res)
-        const data = await res.json();
-        console.log(data);
+        return res
 
     } catch (err) {
         console.error("Error sending email", err)
     }
 
+}
 
+export const sendEmailTestAsync = (formData: FormData): Promise<unknown> => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({
+                message: "your email was sent",
+                ok: true
+            })
+        }, 2000)
+    })
 }

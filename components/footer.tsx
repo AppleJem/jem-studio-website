@@ -23,7 +23,7 @@ function Footer() {
       <div className="text-sm md:text-base flex flex-col lg:flex-row lg:gap-x-8 items-center text-stone-200 w-full">
         {links.map((link) => {
           return <>
-            <Link className="h-12 md:h-16 flex justify-center items-center" href={link.href}>{link.text}</Link>
+            <Link key={link.href} className="h-12 md:h-16 flex justify-center items-center" href={link.href}>{link.text}</Link>
             <hr className="border-t border-t-stone-500 h-1 w-full lg:hidden" />
           </>
         })}

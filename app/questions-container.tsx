@@ -1,14 +1,15 @@
 'use client'
 import type { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from 'react';
 import { Odor_Mean_Chey, Playfair_Display } from "next/font/google";
 
-import { sendEmailFormAsync } from "../utils/utils";
+import { sendEmailFormAsync, sendEmailTestAsync } from "../utils/utils";
 
 import waIcon from '../public/whatsappIcon.svg'
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import loadingSpinner from '../public/loading_spinner.svg'
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -20,7 +21,11 @@ const QuestionsContainer: NextPage = () => {
   const msgInputRef = useRef<HTMLTextAreaElement>(null);
   const router = useRouter();
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  // formState can be "unsent", "loading", "sent"
+  const [formState, setFormState] = useState("unsent");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    setFormState("loading")
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     formData.append('service_id', "jem-studio-website");
@@ -29,11 +34,16 @@ const QuestionsContainer: NextPage = () => {
     for (let item of formData.entries()) {
       console.log(item)
     }
-    // sendEmailFormAsync(formData);
+    const res = await sendEmailTestAsync(formData);
+    if (res.ok) {
+      console.log(res)
+      setFormState("sent")
+    }
+    console.log("loading complete")
   }
 
   function whatsappHandler(e: React.MouseEvent<HTMLButtonElement>) {
-    
+
     let apiLink = "https://api.whatsapp.com/send?phone=6588852577&text=";
     if (msgInputRef.current !== null && msgInputRef.current.value.trim() !== "") {
       apiLink = apiLink.concat(encodeURIComponent(msgInputRef.current?.value));
@@ -69,14 +79,18 @@ const QuestionsContainer: NextPage = () => {
 
         <div className="mb-6">
           <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-          <textarea ref={msgInputRef} id="message" name="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-yellow-400 transition-colors duration-300 ease-out focus:border-yellow-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-          placeholder="Write your message here..."></textarea>
+          <textarea ref={msgInputRef} id="message" name="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-yellow-400 transition-colors duration-300 ease-out focus:border-yellow-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Write your message here..."></textarea>
         </div>
         <div className="flex flex-row justify-center items-center gap-4 mt-6">
-          <button type="submit" className="text-gray-900 bg-gradient-to-r from-yellow-200 to-amber-200 
-        hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200
-        rounded-full text-lg px-7 h-12 text-center self-center">
-            Contact Us
+          <button disabled={formState === "loading" || formState === "sent"} type="submit"
+            className={`text-gray-900 bg-gradient-to-r from-yellow-200 to-amber-200 
+            hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200
+            rounded-full text-lg px-7 h-12 text-center self-center`}>
+            <span className={`${formState === "loading" ? "hidden" : ""}`}>
+              {formState==="sent"?"Thank You!": "Contact Us"}
+            </span>
+            <Image src={loadingSpinner} alt="loading spinner" className={`${formState === "loading" ? "" : "hidden"} h-10 w-10 aspect-square animate-spin fill-white text-white stroke-white`} />
           </button>
           <button type="button" onClick={whatsappHandler} className="h-12 aspect-square rounded-full bg-lime-300 flex justify-center items-center">
             <Image src={waIcon} alt="send whatsapp message" className="h-4/6" />
